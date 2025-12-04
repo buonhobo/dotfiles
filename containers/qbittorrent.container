@@ -13,11 +13,11 @@ Environment=TZ=Europe/Rome
 Environment=WEBUI_PORT=8080
 Volume=/home/shared/.config/qbittorrent-nox:/config:Z
 Volume=/home/shared/Media:/data:z
-PublishPort=8080:8080
-PublishPort=6881:6881/tcp
-PublishPort=6881:6881/udp
+#PublishPort=8080:8080
+#PublishPort=6881:6881/tcp
+#PublishPort=6881:6881/udp
 AutoUpdate=registry
-Network=servarr.network
+Network=container:protonvpn
 
 [Service]
 Restart=always

@@ -12,9 +12,9 @@ Environment=PGID=1001
 Environment=TZ=Europe/Rome
 Volume=/home/shared/.config/sonarr:/config:Z
 Volume=/home/shared/Media:/data:z
-PublishPort=8989:8989
+#PublishPort=8989:8989
 AutoUpdate=registry
-Network=servarr.network
+Network=container:protonvpn
 
 [Service]
 Restart=always
