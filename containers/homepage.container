@@ -1,0 +1,28 @@
+[Unit]
+Description=Homepage dashboard
+Wants=network-online.target
+After=network-online.target
+
+[Container]
+Image=ghcr.io/benphelps/homepage:latest
+Network=host
+
+# Bind config directory
+Volume=/home/shared/.config/homepage:/app/config:Z
+
+# Optionally: allow homepage to read Podman containers for widgets
+Volume=/run/podman/podman.sock:/var/run/docker.sock:ro
+
+SecurityLabelDisable=true
+Volume=/var/home/shared:/mnt/external
+
+
+# Auto-update if you want (optional)
+AutoUpdate=registry
+
+[Service]
+# Restart on crash
+Restart=always
+
+[Install]
+WantedBy=multi-user.target
