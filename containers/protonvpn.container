@@ -19,6 +19,7 @@ PublishPort=8989:8989
 PublishPort=9696:9696
 PublishPort=6767:6767
 PublishPort=8080:8080
+PublishPort=8000:8000
 PublishPort=11011:11011
 PublishPort=8191:8191
 PublishPort=6881:6881/tcp
