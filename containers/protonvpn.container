@@ -2,6 +2,8 @@
 Description=protonvpn (gluetun) podman container
 Wants=network-online.target
 After=network-online.target
+After=var-home-shared.mount
+Requires=var-home-shared.mount
 
 [Container]
 Image=docker.io/qmcgaw/gluetun:latest
