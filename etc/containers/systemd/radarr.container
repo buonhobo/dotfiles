@@ -1,20 +1,24 @@
 [Unit]
 Description=radarr podman container from linuxserver
-Wants=network-online.target
-After=network-online.target
-
+RequiresMountsFor=/home/shared
+After=protonvpn.service
+Requires=protonvpn.service
+PartOf=gluetun.service
 
 [Container]
 Image=lscr.io/linuxserver/radarr
 ContainerName=radarr
-Environment=PUID=1001
-Environment=PGID=1001
+Environment=PUID=1000
+Environment=PGID=1000
 Environment=TZ=Europe/Rome
 Volume=/home/shared/.config/radarr:/config:Z
 Volume=/home/shared/Media:/data:z
 #PublishPort=7878:7878
 AutoUpdate=registry
+#Network=servarr.network
+
 Network=container:protonvpn
+
 
 [Service]
 Restart=always

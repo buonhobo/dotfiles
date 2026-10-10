@@ -1,0 +1,29 @@
+[Unit]
+Description=actual budgeting bot container
+RequiresMountsFor=/home/shared
+
+[Container]
+Image=docker.io/actualbudget/actual-server:latest
+ContainerName=actual
+Environment=PUID=1000
+Environment=PGID=1000
+Environment=TZ=Europe/Rome
+Volume=/home/shared/.config/actual:/data:Z
+AutoUpdate=registry
+PublishPort=5006:5006
+
+# HealthCmd=node scripts/health-check.js
+# HealthInterval=60s
+# HealthTimeout=10s
+# HealthRetries=3
+# HealthStartPeriod=20s
+
+Environment=ACTUAL_HTTPS_CERT=/data/https/minipc.taild5aed.ts.net.pem
+Environment=ACTUAL_HTTPS_KEY=/data/https/minipc.taild5aed.ts.net-key.pem
+
+
+[Service]
+Restart=always
+
+[Install]
+WantedBy=default.target

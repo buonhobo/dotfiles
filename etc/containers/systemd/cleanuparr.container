@@ -1,19 +1,17 @@
 [Unit]
 Description=cleanuparr podman container
-Wants=network-online.target
-After=network-online.target
-
+RequiresMountsFor=/home/shared
 
 [Container]
 Image=ghcr.io/cleanuparr/cleanuparr
 ContainerName=cleanuparr
-Environment=PUID=1001
-Environment=PGID=1001
+Environment=PUID=1000
+Environment=PGID=1000
 Environment=TZ=Europe/Rome
 Volume=/home/shared/.config/cleanuparr:/config:Z
-#PublishPort=11011:11011
+PublishPort=11011:11011
 AutoUpdate=registry
-Network=container:protonvpn
+Network=servarr.network
 
 [Service]
 Restart=always
