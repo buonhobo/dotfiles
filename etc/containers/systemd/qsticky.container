@@ -15,7 +15,7 @@ Environment=QBITTORRENT_API_KEY=REDACTED
 
 Environment=GLUETUN_HOST=protonvpn
 Environment=GLUETUN_AUTH_TYPE=apikey
-Environment=GLUETUN_APIKEY=your_api_key_here
+Environment=GLUETUN_APIKEY=REDACTED
 Environment=LOG_LEVEL=INFO
 
 AutoUpdate=registry
