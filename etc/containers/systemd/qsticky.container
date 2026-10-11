@@ -1,7 +1,8 @@
 [Unit]
 Description=qsticky podman container for port forwarding sync
 RequiresMountsFor=/home/shared
-BindsTo=protonvpn.service
+After=protonvpn.service
+Requires=protonvpn.service
 
 [Container]
 Image=ghcr.io/monstermuffin/qsticky
