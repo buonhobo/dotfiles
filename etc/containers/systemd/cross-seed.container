@@ -1,0 +1,21 @@
+[Unit]
+Description=cross-seed podman container for cross seeding across private trackers
+RequiresMountsFor=/home/shared
+After=protonvpn.service
+Requires=protonvpn.service
+PartOf=protonvpn.service
+
+[Container]
+Image=ghcr.io/cross-seed/cross-seed
+ContainerName=cross-seed
+AutoUpdate=registry
+Volume=/home/shared/.config/cross-seed:/config:Z
+Volume=/home/shared/Media:/data:z
+Exec=daemon
+Network=container:protonvpn
+
+[Service]
+Restart=always
+
+[Install]
+WantedBy=default.target

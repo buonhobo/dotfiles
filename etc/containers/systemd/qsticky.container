@@ -3,7 +3,7 @@ Description=qsticky podman container for port forwarding sync
 RequiresMountsFor=/home/shared
 After=protonvpn.service
 Requires=protonvpn.service
-PartOf=gluetun.service
+PartOf=protonvpn.service
 
 [Container]
 Image=ghcr.io/monstermuffin/qsticky

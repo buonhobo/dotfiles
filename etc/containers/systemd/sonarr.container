@@ -3,7 +3,7 @@ Description=sonarr podman container from linuxserver
 RequiresMountsFor=/home/shared
 After=protonvpn.service
 Requires=protonvpn.service
-PartOf=gluetun.service
+PartOf=protonvpn.service
 
 [Container]
 Image=lscr.io/linuxserver/sonarr
