@@ -1,9 +1,7 @@
 [Unit]
 Description=qbittorrent podman container from linuxserver
 RequiresMountsFor=/home/shared
-After=protonvpn.service
-Requires=protonvpn.service
-PartOf=protonvpn.service
+BindsTo=protonvpn.service
 
 [Container]
 Image=lscr.io/linuxserver/qbittorrent

@@ -1,9 +1,7 @@
 [Unit]
 Description=flaresolverr
 RequiresMountsFor=/home/shared
-After=protonvpn.service
-Requires=protonvpn.service
-PartOf=protonvpn.service
+BindsTo=protonvpn.service
 
 [Container]
 Image=ghcr.io/flaresolverr/flaresolverr
