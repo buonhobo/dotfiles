@@ -1,0 +1,4 @@
+/etc/containers/systemd
+/etc/samba/smb.conf
+/home/shared/.config
+/etc/systemd/system/restic-backup.*

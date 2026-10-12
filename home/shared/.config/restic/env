@@ -1,0 +1,4 @@
+export RESTIC_REPOSITORY="rclone:onedrive-backups:homelab-backups"
+export RESTIC_PASSWORD_FILE="/home/shared/.config/restic/password"
+export RCLONE_CONFIG="/home/shared/.config/restic/rclone.conf"
+export XDG_CACHE_HOME="/home/shared/.config/restic/cache"
